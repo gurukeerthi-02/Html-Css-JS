@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentPortal</title>
+</head>
+<body>
+    <header>
+        <center><h1>Welcome to Student Portal</h1></center>
+        <fieldset>
+        <center>
+            <img src="https://static.vecteezy.com/system/resources/previews/024/724/633/non_2x/a-happy-smiling-young-college-student-with-a-book-in-hand-isolated-on-a-transparent-background-generative-ai-free-png.png"
+            alt="student-image" width="400" height="400"/>
+        <nav>
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+        </nav>
+        </center>
+        </fieldset>
+    </header>
+    <h2>
+        Fill up the form to register as a student.
+    </h2>
+    <form action="./submit" method="post">
+        <p>
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required/>
+        </p>
+        <p>
+        <label for="email">Enter your personal email:</label>
+        <input type="email" id="email" name="email" required/>
+        </p>
+        <p>
+        <label for="password">Enter your password:</label>
+        <input type="password" id="password" name="password" required/>
+        </p>
+        <p>
+        <label for="dateofbirth">Pick your date of birth:</label>
+        <input id="dateofbirth" type="date" required>
+        </p>
+        <p>
+        <fieldset>
+        <legend>Select your shift:</legend>
+        <input type="radio" name="shift" id="morning-shift" value="morning"/>
+        <label for="shift">Morning</label>
+        <input type="radio" name="shift" id="evening-shift" value="evening"/>
+        <label for="shift">Evening</label>
+        </fieldset>
+        </p>
+        <p>
+        <label for="courses">Select your course:</label>
+        <select name="courses" id="courses">
+            <option value="" disabled>--Please choose an option--</option>
+            <option value="bca">BCA</option>
+            <option value="bscit">BSc.IT</option>
+            <option value="bcom">BCom</option>
+            <option value="ba">BA</option>
+        </select>
+        </p>
+        <button >Register</button>
+    </form>
+</body>
+</html>
