@@ -75,6 +75,11 @@ body {
     background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") no-repeat center center / cover;
     font-family: sans-serif;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .heading{
