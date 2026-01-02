@@ -44,6 +44,11 @@
   - Focused on type conversions (implict and explict)
   - Created simple scripts to interact with users.
   - Resources used: javascript.info
+- **Day 10**
+  - Learnt about operators, comparisons and branching statements.
+  - Created scripts using operators and conditional statements.
+  - Resources used: javascript.info
+
   
 
 
