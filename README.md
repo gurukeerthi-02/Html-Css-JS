@@ -48,6 +48,16 @@
   - Learnt about operators, comparisons and branching statements.
   - Created scripts using operators and conditional statements.
   - Resources used: javascript.info
+- **Day 11**
+  - Learnt about logical operators.
+  - Learnt about nullish coalescing.
+  - Created scripts using logical operators and nullish coalescing.
+  - Resources used: javascript.info
+- **Day 12**
+  - Learnt about loops
+  - Created scripts using different types of loops and switch statements.
+  - Started small projects
+  - Resources used: javascript.info
 
   
 
