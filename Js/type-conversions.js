@@ -6,3 +6,7 @@ alert(number - "26"); // -6
 let boolean = true;
 alert(String(boolean)); // "true"
 alert(Number(boolean)); // 1
+
+
+let input = "20";
+alert(typeof(+input)); // "number"
