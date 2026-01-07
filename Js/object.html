@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let names = {} // object literal
+        let persons = new Object(); // object construtor
+        persons = {
+            name : "Guru", // property one
+            age : 23 // property two
+        }
+        console.log(persons.name);
+
+        persons.isAdmin = true; // add property
+
+        console.log(persons.isAdmin)
+
+        delete persons.age; // delete a property
+
+        console.log(persons)
+
+        let students = {
+            name : "Vishal",
+            age : 21,
+            "is placed" : false
+        }
+
+        console.log(students)
+        console.log(students["is placed"]) // accessing property with space
+        let status = students["is placed"]
+        delete students["is placed"]
+        console.log(students)
+
+        let subjects = {
+            math : 90,
+            science : 50,
+            english : 70
+        }
+
+        console.log("math" in subjects) // all keys will be in string format 
+        console.log("science" in students)
+        for(let keys in students){
+            console.log(keys) // only the keys will be displayed
+            console.log(students[keys]) // the values of the keys will be displayed
+        }
+
+        let codes = {
+            "49": "Germany",
+            "41": "Switzerland",
+            "44": "Great Britain",
+            // ..,
+            "1": "USA"
+        };
+
+        for (let code in codes) {
+            console.log(code); // 1, 41, 44, 49 all will be sorted for integer keys
+        }
+
+        let codess = {
+            "+49": "Germany",
+            "+41": "Switzerland",
+            "+44": "Great Britain",
+            // ..,
+            "+1": "USA"
+        };
+
+        for (let code in codes) {
+            console.log(code); // 1, 41, 44, 49 can be cheated to print like this
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

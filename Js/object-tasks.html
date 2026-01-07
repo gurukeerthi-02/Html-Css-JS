@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let user = {};
+        user.name = "John";
+        user.surname = "Smith";
+        for(let key in user){
+            console.log(user[key]);
+        }
+
+        user.name = "Pete";
+
+        for(let key in user){
+            console.log(user[key]);
+        }
+
+        delete user.name;
+
+        for(let key in user){
+            console.log(user[key]);
+        }
+
+        function isEmpty(schedule){
+            for(let key in schedule){
+                return false; // if the loop started , it is not empty.
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

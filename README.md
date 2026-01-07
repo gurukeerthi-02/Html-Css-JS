@@ -57,6 +57,8 @@
   - Learnt about loops
   - Created scripts using different types of loops and switch statements.
   - Started small projects
+  - Learnt function declaration, function expressions and callback functions.
+  - Learnt arrow functions.
   - Resources used: javascript.info
 
   
