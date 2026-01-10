@@ -48,6 +48,9 @@
   - Learnt about operators, comparisons and branching statements.
   - Created scripts using operators and conditional statements.
   - Resources used: javascript.info
+- **Day 11**
+  - Learnt about logical operators.
+  
 
   
 
