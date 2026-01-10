@@ -60,6 +60,13 @@
   - Learnt function declaration, function expressions and callback functions.
   - Learnt arrow functions.
   - Resources used: javascript.info
+- **Day 13**
+  - Learnt about objects.
+  - Created scripts using objects and their properties.
+  - Resources used: javascript.info
+- **Day 14**
+  - Started with a yt course to learn and review my JavaScript 
+  
 
   
 

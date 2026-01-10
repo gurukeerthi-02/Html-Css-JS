@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Toss Game</title>
+</head>
+<body>
+  <p>Coin Toss Game</p>
+  <button onclick="
+    tossCoin('Head')">
+    Head
+  </button>
+
+  <button onclick="
+    tossCoin('Tail')">
+    Tail
+  </button>
+
+  <script>
+    function tossCoin(choice){
+      let userChoice = choice;
+      let computerChoice = '';
+      let randomNumber = Math.random()*2/2;
+      console.log(randomNumber);
+      if(randomNumber > 0.5 && randomNumber < 1){
+        computerChoice = 'Head';
+      }else{
+        computerChoice = 'Tail';
+      }
+
+      let result = computerChoice == userChoice ? 'Correct' : 'Wrong';
+
+      alert(`You choose: ${userChoice}.
+      Computer choose: ${computerChoice}
+      You are ${result}!`);
+    }
+  </script>
+</body>
+</html>

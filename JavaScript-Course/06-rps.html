@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock Paper Scissors Game</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors Game</p>
+    <button onclick="playGame('Rock')">Rock</button>
+    <button onclick="playGame('Paper')">Paper</button>
+    <button onclick="playGame('Scissor')">Scissors</button>
+    <button onclick="
+      userWinCount = 0;
+      computerWinCount = 0;
+      drawCount = 0;
+      alert('Scores deleted!')">
+      Reset
+  </button>
+
+    <script>
+      let userWinCount = 0;
+      let computerWinCount = 0;
+      let drawCount = 0;
+
+      function playGame(userInput) {
+
+        let randomInput = Math.floor(Math.random() * 3);
+        let computerInput = '';
+
+        if (randomInput === 0) computerInput = 'Rock';
+        else if (randomInput === 1) computerInput = 'Paper';
+        else computerInput = 'Scissor';
+
+        let result = '';
+
+        if (userInput === computerInput) {
+          result = 'Tie!';
+          drawCount++;
+        }
+        else if (
+          (userInput === 'Rock' && computerInput === 'Scissor') ||
+          (userInput === 'Paper' && computerInput === 'Rock') ||
+          (userInput === 'Scissor' && computerInput === 'Paper')
+        ) {
+            result = 'You win!';
+            userWinCount++;
+        }
+        else {
+          result = 'Computer wins!';
+          computerWinCount++;
+        }
+
+        alert(
+          `You chose ${userInput}. Computer chose ${computerInput}. Result: ${result}\n` +
+          `Score:\nYou: ${userWinCount}\nComputer: ${computerWinCount}\nDraws: ${drawCount}`
+        );
+      }
+  </script> 
+</body>
+</html>
