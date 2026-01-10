@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let number1 = prompt("Enter a number: ");
+        let number2 = prompt("Enter another number: ");
+        let operation = prompt("Enter the arithmetic operation(+,-,*,/,%)L: ");
+
+        if (isNaN(number1) || isNaN(number2)){
+            alert("Please enter valid numbers!");
+        }else if (!["+","-","*","/","%"].includes(operation)){
+            alert("Enter a valid operation!")
+        }else{switch(operation){
+            case "+":
+                alert(`The sum is: ${Number(number1) + Number(number2)}`);
+                break;
+            case "-":
+                alert(`The difference is: ${Number(number1) - Number(number2)}`);
+                break;
+            case "*":
+                alert(`The product is: ${Number(number1) * Number(number2)}`);
+                break;
+            case "/":
+                if(number2 == 0){
+                    alert("Division by zero is not allowed.");
+                }else{
+                    alert(`The quotient is: ${Number(number1) / Number(number2)}`);
+                }
+                break;
+            case "%":
+                alert(`The remainder is: ${Number(number1) % Number(number2)}`);
+                break;
+            default:
+                alert("Invalid operation!");
+         
+           }   }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

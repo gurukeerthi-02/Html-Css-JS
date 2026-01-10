@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Your JavaScript code here
+        let userInputAmount = +(prompt("Enter the amount to track expenses:"));
+switch (true) {
+  case userInputAmount < 100:
+    alert("You are a low spender.");
+    break;
+  case userInputAmount >= 100 && userInputAmount < 500:
+    alert("You are a moderate spender.");
+    break;
+  case userInputAmount >= 500 && userInputAmount < 2000:
+    alert("You are a high spender.");
+    break;
+  case userInputAmount >= 2000:
+    alert("You are an extravagant spender.");
+    break;
+  default:
+    alert("Invalid input.");
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let studentGrade = +prompt("Enter your grade (0-100):");
+
+        switch (true) {
+            case studentGrade > 100 || studentGrade < 0:
+                alert("Please enter a valid grade between 0 and 100.");
+                break;
+            case studentGrade >= 90:
+                alert("You got an A.");
+                break;
+            case studentGrade >= 80:
+                alert("You got a B.");
+                break;
+            case studentGrade >= 70:
+                alert("You got a C.");
+                break;
+            case studentGrade >= 60:
+                alert("You got a D.");
+                break;
+            default:
+                alert("You got an F.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
