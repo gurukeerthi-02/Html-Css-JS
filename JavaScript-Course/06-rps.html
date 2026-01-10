@@ -8,18 +8,30 @@
     <button onclick="playGame('Rock')">Rock</button>
     <button onclick="playGame('Paper')">Paper</button>
     <button onclick="playGame('Scissor')">Scissors</button>
-    <button onclick="
-      userWinCount = 0;
-      computerWinCount = 0;
-      drawCount = 0;
-      alert('Scores deleted!')">
+    <button onclick="resetGame()">
       Reset
   </button>
 
     <script>
-      let userWinCount = 0;
-      let computerWinCount = 0;
-      let drawCount = 0;
+      const score = JSON.parse(localStorage.getItem('score'))
+
+      // console.log(JSON.parse(localStorage.getItem('score')));
+      // const {userWinCount} = score;
+      // const {computerWinCount} = score;
+      // const {drawCount} = score;
+      
+      // console.log(userWinCount);
+      // console.log(computerWinCount);
+      // console.log(drawCount);
+      
+
+      function resetGame(){
+        score.userWinCount = 0;
+        score.computerWinCount = 0;
+        score.drawCount = 0;
+        localStorage.setItem('score',JSON.stringify(score));
+        alert('Game reset!');
+      }
 
       function playGame(userInput) {
 
@@ -34,7 +46,7 @@
 
         if (userInput === computerInput) {
           result = 'Tie!';
-          drawCount++;
+          score.drawCount++;
         }
         else if (
           (userInput === 'Rock' && computerInput === 'Scissor') ||
@@ -42,16 +54,18 @@
           (userInput === 'Scissor' && computerInput === 'Paper')
         ) {
             result = 'You win!';
-            userWinCount++;
+            score.userWinCount++;
         }
         else {
           result = 'Computer wins!';
-          computerWinCount++;
+          score.computerWinCount++;
         }
+
+        localStorage.setItem('score',JSON.stringify(score));
 
         alert(
           `You chose ${userInput}. Computer chose ${computerInput}. Result: ${result}\n` +
-          `Score:\nYou: ${userWinCount}\nComputer: ${computerWinCount}\nDraws: ${drawCount}`
+          `Score:\nYou: ${score.userWinCount}\nComputer: ${score.computerWinCount}\nDraws: ${score.drawCount}`
         );
       }
   </script> 
