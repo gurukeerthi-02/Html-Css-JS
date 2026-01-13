@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Toss Game</title>
+</head>
+<body>
+  <p>Coin Toss Game</p>
+  <button onclick="
+    tossCoin('Head')">
+    Head
+  </button>
+
+  <button onclick="
+    tossCoin('Tail')">
+    Tail
+  </button>
+
+  <button onclick="resetGame()">
+    Reset
+  </button>
+
+  <script>
+
+    let score =JSON.parse(localStorage.getItem('score')) || {
+      winCount : 0,
+      lossCount : 0
+    }
+
+    function resetGame(){
+      score.winCount = 0;
+      score.lossCount = 0;
+      localStorage.setItem('score',JSON.stringify(score));
+      alert('Game reset!');
+    }
+
+  
+    function tossCoin(userChoice){
+      let computerChoice = Math.random() > 0.5 ? 'Head' : 'Tail';
+      let result = '';
+
+      if(computerChoice === userChoice){
+        score.winCount+=1;
+        console.log(score.winCount);
+        result = 'Correct';
+      }else{
+        score.lossCount+=1;
+        console.log(score.lossCount);
+        result = 'Wrong';
+      }
+
+      localStorage.setItem('score',JSON.stringify(score));
+
+
+      alert(`You chose: ${userChoice}
+        Computer chose: ${computerChoice}
+        You are ${result}!
+        Wins: ${score.winCount}
+        Losses: ${score.lossCount}`);
+    } 
+  </script>
+</body>
+</html>
