@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 Exercises</title>
+</head>
+<body>
+  <button>9a</button>
+  <button class="js-9b-button">9b</button>
+  <p></p>
+
+  <button class="js-heads-button" onclick="showChoice('Heads')">Heads</button>
+  <button class="js-tails-button" onclick="showChoice('Tails')">Tails</button>
+  <p class="js-result"></p>
+  <p></p>
+
+  <input type="text" placeholder="Name" class="js-myname" onkeydown="if(event.key === 'Enter') displayName()">
+  <button onclick="displayName()">Submit</button>
+  <p class="js-name-result"></p>
+  <p></p>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40= +$10 shipping</p>
+  <p>Orders over $40= FREE shipping</p>
+
+  <input 
+    type="text" 
+    class="js-cost-input" 
+    placeholder="Cost of order" 
+    onkeydown="handleCostKeydown(event);">
+
+  <button 
+    onclick="calculateShipping();">
+    Calculate
+  </button>
+
+  <p class="js-calculate-shipping"></p>
+  <p></p>
+
+  <input type="text" class="js-input" onkeyup="displayKeyMessage(
+    document.querySelector('.js-input')
+  )">
+  <p class="js-onkeyup-result"></p>
+
+
+  <script>
+    console.log(document.querySelector('button'));
+    document.querySelector('.js-9b-button').innerText = '9b done!';
+
+    function showChoice(choice){
+      document.querySelector('.js-result').innerHTML = `<p>You chose: ${choice}</p>`
+    }
+
+    
+    function displayName(){
+      let myName = document.querySelector('.js-myname').value;
+      console.log(myName)
+      document.querySelector('.js-name-result').innerText = `Your name is: ${myName}`;
+    }
+
+    function handleCostKeydown(event){
+      if(event.key === 'Enter'){
+        calculateShipping();
+      }
+    }
+
+    function calculateShipping(){
+      const orderTotalPrice = document.querySelector('.js-cost-input');
+      let totalPrice = +orderTotalPrice.value;
+
+      if(totalPrice < 40){
+        totalPrice+=10;
+      }
+
+      document.querySelector('.js-calculate-shipping')
+        .innerHTML = `Your shipping is $${Math.round(totalPrice,2)}`; 
+
+    }
+
+    function displayKeyMessage(inputElement){
+      document.querySelector('.js-onkeyup-result').innerHTML = inputElement.value;
+    }
+
+  </script>
+</body>
+</html>
