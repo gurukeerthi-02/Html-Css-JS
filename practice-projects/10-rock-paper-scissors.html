@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock Paper Scissors Game</title>
+    <style>
+      body{
+        background-color: rgb(25, 25, 25);
+        font-family: Arial;
+        color: white;
+      }
+      h1{
+        font-size: 30px;
+        font-weight: bold;
+        padding-bottom: 10px;
+      }
+      .play-button{
+        border: none;
+        border: 3px solid white;
+        background-color: transparent;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-right: 10px;
+        cursor: pointer;
+
+      }
+      img{
+        height: 50px;
+        background-color: none;
+      }
+
+      .result{
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors Game</h1>
+    <button onclick="playGame('Rock')" class="play-button"><img src="../public/images/rock-removebg-preview.png" alt="rock"></button>
+    <button onclick="playGame('Paper')"class="play-button"><img src="../public/images/paper-removebg-preview.png" alt="paper"></button>
+    <button onclick="playGame('Scissor')"class="play-button"><img src="../public/images/scissors-removebg-preview.png" alt="scissors"></button>
+    <p class="js-result result"></p>
+    <p class="js-score"></p>
+    <button onclick="resetGame()">
+      Reset
+  </button>
+  
+
+    <script>
+      const score = JSON.parse(localStorage.getItem('score')) ||
+      {
+        userWinCount: 0,
+        computerWinCount: 0,
+        drawCount: 0
+      }
+
+      updateScore();
+      function resetGame(){
+        score.userWinCount = 0;
+        score.computerWinCount = 0;
+        score.drawCount = 0;
+        localStorage.setItem('score',JSON.stringify(score));
+        alert('Game reset!');
+        updateScore();
+        
+      }
+
+      function updateScore(){
+        document.querySelector('.js-score')
+          .innerHTML = `Score:\nYou: ${score.userWinCount}\nComputer: ${score.computerWinCount}\nDraws: ${score.drawCount}`
+      }
+
+      function playGame(userInput) {
+
+        let randomInput = Math.floor(Math.random() * 3);
+        let computerInput = randomInput === 0 ? 'Rock' : randomInput === 1 ? 'Paper' : 'Scissor';
+        let result = '';
+
+        if (userInput === computerInput) {
+          result = 'Tie!';
+          score.drawCount++;
+        }
+        else if (
+          (userInput === 'Rock' && computerInput === 'Scissor') ||
+          (userInput === 'Paper' && computerInput === 'Rock') ||
+          (userInput === 'Scissor' && computerInput === 'Paper')
+        ) {
+            result = 'You win!';
+            score.userWinCount++;
+        }
+        else {
+          result = 'Computer wins!';
+          score.computerWinCount++;
+        }
+
+        localStorage.setItem('score',JSON.stringify(score));
+
+        document.querySelector('.js-result')
+          .innerHTML = `<p>${result}</p>`
+
+        
+
+        document.querySelector('.js-score')
+          .innerHTML = `<p>You chose ${userInput}. Computer chose ${computerInput}.</p> 
+          <p>Score:\nYou: ${score.userWinCount}\nComputer: ${score.computerWinCount}\nDraws: ${score.drawCount}</p>`
+      }
+  </script> 
+</body>
+</html>

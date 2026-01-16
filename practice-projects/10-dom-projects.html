@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+    body{
+      font-family: Arial;
+    }
+    .subscribe-button{
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 50px;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .is-subscribed{
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+    .cost-input{
+      padding: 10px;
+      font-size: 15px;
+    }
+
+    .calculate-shipping-button{
+      padding: 12px 15px ;
+      background-color: green ;
+      color: white ;
+      border: none;
+      font-size: 15px;
+
+    }
+  </style>
+</head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  
+  <button 
+    class="js-subscribe-button subscribe-button"
+    onclick="subscribe()">
+    Subscribe
+  </button>
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40= +$10 shipping</p>
+  <p>Orders over $40= FREE shipping</p>
+
+  <input 
+    type="text" 
+    class="js-cost-input cost-input" 
+    placeholder="Cost of order" 
+    onkeydown="handleCostKeydown(event);">
+
+  <button 
+    onclick="calculateShipping();"
+    class="calculate-shipping-button">
+    Calculate
+  </button>
+
+  <p class="js-calculate-shipping"></p>
+
+  
+  <script>
+    function subscribe(){
+      const buttonElement = document.querySelector('.js-subscribe-button');
+      // innerHTML will count the spaces
+      // use innerText
+      if(buttonElement.innerText === 'Subscribe'){
+        buttonElement.innerText = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');
+      }else {
+        buttonElement.innerText = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+      }
+    }
+
+    function handleCostKeydown(event){
+      if(event.key === 'Enter'){
+        calculateShipping();
+      }
+    }
+
+    function calculateShipping(){
+      const orderTotalPrice = document.querySelector('.js-cost-input');
+      let totalPrice = +orderTotalPrice.value * 100;
+
+      if(totalPrice < 4000){
+        totalPrice+=1000;
+      }
+
+      document.querySelector('.js-calculate-shipping')
+        .innerHTML = `Your shipping is $${totalPrice/100}`; 
+
+    }
+
+    
+    
+  </script>
+</body>
+</html>
